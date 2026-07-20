@@ -67,17 +67,42 @@ class cardetails{
 };
 
 int main() {
-cout<<"\n========== PARKING MANAGEMENT SYSTEM ========== \n\n";
+    int choice;
+    cardetails c1;
 
-class cardetails c1,c2,c3;
-c1.getinfo();
-c1.park();
-c2.getinfo();
-c2.park();
-c3.getinfo();
-c3.park();
-c2.unpark();
-c2.unpark();
+    while (true) {
 
-return 0;
+        cout << "\n========== PARKING MANAGEMENT SYSTEM ==========\n\n";
+        cout << "1. PARK VEHICLE\n";
+        cout << "2. UNPARK VEHICLE\n";
+        cout << "3. CHECK AVAILABILITY\n";
+        cout << "4. EXIT\n";
+        cout << "Select one choice : ";
+        cin >> choice;
+        cout << endl;
+
+        switch (choice) {
+            case 1:
+                c1.getinfo();
+                c1.park();
+                break;
+
+            case 2:
+                c1.getinfo();
+                c1.unpark();
+                break;
+
+            case 3:
+                cout << "Cars Available : " << parkingcar - carCount << endl;
+                cout << "Bikes Available : " << parkingbike - bikeCount << endl;
+                break;
+
+            case 4:
+                cout << "Thank you for using the Parking Management System!" << endl;
+                return 0;
+
+            default:
+                cout << "Invalid Choice!" << endl;
+        }
+    }
 }
