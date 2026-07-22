@@ -29,13 +29,13 @@ class cardetails{
     void park(){    //PARKS THE VEHICLE IF AVAILABLE 
         if (vehicletype == "car") {
             if (carCount < parkingcar){
-                cout << "THANKYOU !!"<<endl<<"Your parking slot number is - "<<carCount<<endl<<endl;
+                cout << "THANKYOU FOR PARKING HERE !!"<<endl<<endl;
                 carCount++;
             }else cout<<"SORRY NO PARKING SPOT AVAILABLE FOR CAR :("<<endl<<endl;
         }
         else if (vehicletype == "bike") {
             if (bikeCount < parkingbike){
-                cout << "THANKYOU !!"<<endl<<"Your parking slot number is - "<<bikeCount<<endl<<endl;
+                cout << "THANKYOU FOR PARKING HERE !!"<<endl<<endl;
                 bikeCount++;
             }else cout<<"SORRY NO PARKING SPOT AVAILABLE FOR BIKE :("<<endl<<endl;
         }
@@ -73,10 +73,13 @@ int main() {
     while (true) {
 
         cout << "\n========== PARKING MANAGEMENT SYSTEM ==========\n\n";
+
+        cout << "Car Parking Slots Available : " << parkingcar - carCount << endl;
+        cout << "Bike Parking Slots Available : " << parkingbike - bikeCount << endl<<endl;
+
         cout << "1. PARK VEHICLE\n";
         cout << "2. UNPARK VEHICLE\n";
-        cout << "3. CHECK AVAILABILITY\n";
-        cout << "4. EXIT\n";
+        cout << "3. EXIT\n";
         cout << "Select one choice : ";
         cin >> choice;
         cout << endl;
@@ -93,11 +96,6 @@ int main() {
                 break;
 
             case 3:
-                cout << "Cars Available : " << parkingcar - carCount << endl;
-                cout << "Bikes Available : " << parkingbike - bikeCount << endl;
-                break;
-
-            case 4:
                 cout << "Thank you for using the Parking Management System!" << endl;
                 return 0;
 
